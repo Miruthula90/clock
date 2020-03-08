@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="clock.css">
+</head>
+
+<body>
+  <div class="maindiv">
+    <div class="clock">
+        <div class="hour">
+               <div class="hr" id="hr"></div>
+        </div>
+        <div class="min">
+            <div class="mn" id="mn"></div>
+       </div>
+        <div class="sec">
+        <div class="sc" id="sc"></div>
+       </div>
+    </div>
+  </div>
+  <div class="sidediv">
+<div class="container">
+<div class="row justify-content-center">
+    <div id="mainmenu" class="d-flex">
+        <div class="p-3 bd-highlight"><button type="button" class="btn btn-secondary" onclick="callstopwatch();">Stop Watch</button></div>
+        <div class="p-3 bd-highlight"><button type="button" class="btn btn-secondary">Timer</button></div>
+        <div class="p-3 bd-highlight"><button type="button" class="btn btn-secondary">alarm</button></div>
+      </div>
+</div>
+<div id="stopwatch" class="row" style="visibility: collapse;">
+    <h1><p id="output"><b>0:00:00:00</b></p></h1>
+<div id="controls" align="center" class="d-flex m-3">
+    <button id= "startPause" onclick="startPause()"><b id="start">Start</b></button>
+    <button onclick="reset()" id="reset"><b id="reset">Reset</b></button>
+    <button onclick="close()" id="close"><b id="close">Close</b></button>
+</div>
+
+</div>
+<div class="row">
+    <center>
+        <table style="border:1px solid black;text-align:center;">
+         <tr style="font-size:60px;">
+          <td id="days"><center>00</center></td>
+          <td id="hours"><center>00</center></td>
+          <td id="min"><center>00</center></td>
+          <td id="sec"><center>00</center></td>
+         </tr>
+         <tr>
+          <td><center> &ensp;&ensp;&ensp;&ensp;Days &ensp;&ensp;&ensp;&ensp;</center></td>
+          <td><center> &ensp;&ensp;&ensp;&ensp;Hours &ensp;&ensp;&ensp;&ensp;</center></td>
+          <td><center> &ensp;&ensp;&ensp;&ensp;Minutes &ensp;&ensp;&ensp;&ensp;</center></td>
+          <td><center> &ensp;&ensp;&ensp;&ensp;Seconds &ensp;&ensp;&ensp;&ensp;</center></td> 
+         </tr>
+        </table>
+        
+        </center>
+</div>
+    
+
+</div>
+</div>
+<script src="clock.js"></script>
+       <script>
+
+ 
+  const deg = 6;
+  const hr = document.querySelector("#hr");
+  const mn = document.querySelector("#mn");  
+  const sc = document.querySelector("#sc");
+  setInterval(() => {
+   let day = new Date();
+   let hh = day.getHours() * 30;
+   let mm = day.getMinutes() * deg;
+   let ss = day.getSeconds() * deg;
+   hr.style.transform = `rotateZ(${hh+(mm/12)}deg)`;
+   mn.style.transform = `rotateZ(${mm}deg)`;
+   sc.style.transform = `rotateZ(${ss}deg)`;
+  } )
+ </script>
+    
+</body>
+</html>

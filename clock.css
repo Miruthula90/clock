@@ -1,0 +1,155 @@
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+.maindiv
+{
+display:flex;
+justify-content: center;
+margin-right: 0px;
+align-items:top;
+padding-top:10px;
+min-height: 100vh;
+background: lightgrey;
+float:left;
+width:50%;
+border-right:10px solid gray;
+}
+
+.sidediv
+{
+    float:right;
+    width:50%;
+    min-height: 100vh;
+    background: lightgrey;
+}
+
+
+.clock
+{
+    width:350px;
+    height:350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white url('clock.png');
+    background-size: cover;
+    border-radius: 50%;
+    border:20px solid white;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, .1),0 20px 20px rgba(0,0,0,0.2),0 0 0 4px rgba(255,255,255,1)
+}
+
+.clock::before
+{
+content:'';
+position:absolute;
+width:15px;
+height:15px;
+background:grey;
+border:2px solid white;
+z-index:100000;
+border-radius: 50%;
+}
+
+.hour,.min,.sec
+{
+    position: absolute;
+}
+
+.hour,.hr
+{
+ width:10px;
+ height:120px;
+}
+.min,.mn
+{
+ width:6px;
+ height:140px;
+}
+.sec,.sc
+{
+ width:6px;
+ height:190px;
+}
+
+.hr.mn.sc
+{
+    display:flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+}
+.hr::before
+{
+    content:'';
+    position:absolute;
+    width:8px;
+    height:50px;
+    background:grey;
+    z-index: 10;
+    border-radius: 6px 6px 0 0;
+}
+
+.mn::before
+{
+    content:'';
+    position:absolute;
+    width:4px;
+    height:70px;
+    background:black;
+    z-index: 11;
+    border-radius: 6px 6px 0 0;
+}
+
+.sc::before
+{
+    content:'';
+    position:absolute;
+    width:2px;
+    height:130px;
+    background:coral;
+    z-index: 12;
+    border-radius: 6px 6px 0 0;
+}
+
+h1 {
+    font-size: 4.5em;
+}
+
+button {
+    font-size: 30px;
+    width: 140px;
+    height: 60px;
+    border-radius: 5px;
+}
+
+#startPause {
+    background-color: green;
+    border-color: green;
+}
+
+#mainmenu{
+    margin-top:-150px;
+}
+
+#reset {
+    background-color: gray;
+    border-color: gray;
+}
+#close {
+    background-color: gray;
+    border-color: gray;
+}
+
+.container {
+    margin: auto;
+    margin-top: 200px;
+    width: 400px;
+    height: 400px;
+}
+#controls {
+    margin-left: 7px;
+    width: 310px;
+    height:70px;
+}
